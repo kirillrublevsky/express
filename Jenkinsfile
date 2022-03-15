@@ -4,6 +4,11 @@ pipeline {
     nodejs 'node'
   }
   stages {
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/kirillrublevsky/express'
+      }
+    } 
     stage('Install') {
       steps {
         bat 'npm i'

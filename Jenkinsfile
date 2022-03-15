@@ -11,7 +11,7 @@ pipeline {
     } 
     stage('Install') {
       steps {
-        bat 'npm i'
+        bat 'npm i -save express'
       }
     }
      stage('Test') {

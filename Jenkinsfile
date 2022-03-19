@@ -1,6 +1,6 @@
 pipeline {
   environment { 
-    def registry = "YourDockerhubAccount/YourRepository" 
+    def registry = "kirillvr/test" 
     def registryCredential = 'dockerhub_id' 
     def app = '' 
   }
@@ -16,7 +16,9 @@ pipeline {
     }  
     stage('Build image') {
       steps {
-        app = docker.build("kirillvr/test")
+        script {
+          app = docker.build registry + ":$BUILD_NUMBER"
+        }
       }
     }
     stage('Test') {

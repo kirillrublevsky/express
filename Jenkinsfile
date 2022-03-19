@@ -4,6 +4,9 @@ pipeline {
     nodejs 'node'
   }
   stages {
+    stage('Clone repository') {
+        checkout scm
+    }
   
     stage('Install') {
       steps {

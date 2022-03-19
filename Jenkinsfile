@@ -47,7 +47,7 @@ pipeline {
 //     } 
     stage('Start container') { 
       steps { 
-        bat "docker run -p 3333:8080 -d kirillvr/test" 
+        bat "docker run -p 3333:8080 -d kirillvr/test:17" 
       }
     }
   }

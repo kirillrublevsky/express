@@ -23,8 +23,10 @@ pipeline {
     }
     stage('Test image') {
       steps {
-        app.inside {
-          bat 'echo "Tests passed"'
+        script {
+          app.inside {
+            bat 'echo "Tests passed"'
+          }
         }
       }
     }

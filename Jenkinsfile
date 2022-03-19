@@ -10,9 +10,10 @@ pipeline {
   }
   stages {
     stage('Clone repository') {
+      steps {
         git 'https://github.com/kirillrublevsky/express.git'
-    }
-  
+      }        
+    }  
     stage('Install') {
       steps {
         bat 'npm i -save express'

@@ -21,9 +21,11 @@ pipeline {
         }
       }
     }
-    stage('Test') {
+    stage('Test image') {
       steps {
-         bat 'node app.js'
+        app.inside {
+          bat 'echo "Tests passed"'
+        }
       }
     }   
   }

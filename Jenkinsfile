@@ -14,12 +14,12 @@ pipeline {
         git 'https://github.com/kirillrublevsky/express.git'
       }        
     }  
-    stage('Install') {
+    stage('Build image') {
       steps {
-        bat 'npm i -save express'
+        app = docker.build("kirillvr/test")
       }
     }
-     stage('Test') {
+    stage('Test') {
       steps {
          bat 'node app.js'
       }

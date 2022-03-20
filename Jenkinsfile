@@ -14,6 +14,11 @@ pipeline {
         git 'https://github.com/kirillrublevsky/express.git'
       }        
     }  
+    stage('Scan with Probely') {
+      steps {
+        probelyScan targetId: '48n82asaW1Bm', credentialsId: 'probely-test-site', waitForScan: true, stopIfFailed: true, failThreshold: 'medium'
+      }        
+    } 
 //     stage('Build image') {
 //       steps {
 //         script {
